@@ -1,0 +1,7 @@
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="200" fill="#0D0D0D"></rect>
+  <text x="50%" y="45%" fill="#9b59b6" font-size="42" font-family="Arial" text-anchor="middle">MbahGenk</text>
+  <text x="50%" y="75%" fill="#ffffff" font-size="28" font-family="Arial" text-anchor="middle" opacity="0.85">
+    AI Creator
+  </text>
+</svg>

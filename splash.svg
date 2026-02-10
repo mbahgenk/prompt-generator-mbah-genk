@@ -1,0 +1,18 @@
+<svg width="720" height="1280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#8e44ad" stop-opacity="0.9"></stop>
+      <stop offset="100%" stop-color="#0a0a0a"></stop>
+    </radialGradient>
+  </defs>
+
+  <rect width="720" height="1280" fill="url(#bg)"></rect>
+
+  <text x="50%" y="55%" fill="white" font-size="52" font-family="Arial" text-anchor="middle" style="letter-spacing:2px; text-shadow:0 0 25px #b57bee;">
+    MbahGenk
+  </text>
+
+  <text x="50%" y="63%" fill="#dcdcdc" font-size="28" font-family="Arial" text-anchor="middle" opacity="0.8">
+    AI Creator Loading...
+  </text>
+</svg>
