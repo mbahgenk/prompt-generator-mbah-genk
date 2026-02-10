@@ -1,157 +1,72 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mbah Genk – Video Prompt Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MbahGenk AI Creator</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 15px;
-        background: #f7f7f7;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #111;
+            color: white;
+        }
 
-    input, select, textarea {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0 18px;
-        border-radius: 8px;
-        border: 1px solid #bbb;
-        font-size: 16px;
-        box-sizing: border-box;
-    }
+        .container {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
 
-    textarea {
-        height: 90px;
-        resize: vertical;
-    }
+        .logo {
+            width: 200px;
+            margin-top: 20px;
+        }
 
-    button {
-        padding: 12px 16px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        width: 100%;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
+        .splash {
+            width: 300px;
+            margin-top: 20px;
+        }
 
-    .btn-add {
-        background: #007bff;
-        color: white;
-    }
+        h1 {
+            font-size: 32px;
+            margin-top: 20px;
+        }
 
-    .btn-gen {
-        background: #28a745;
-        color: white;
-    }
+        p {
+            font-size: 18px;
+            line-height: 26px;
+        }
 
-    .scene-box {
-        background: white;
-        padding: 15px;
-        margin-bottom: 18px;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-    }
-
-    #output {
-        background: white;
-        padding: 18px;
-        border-radius: 10px;
-        min-height: 120px;
-        margin-top: 20px;
-        border: 1px solid #ddd;
-        white-space: pre-line;
-    }
-</style>
+        .footer {
+            margin-top: 40px;
+            opacity: 0.6;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>🎬 Mbah Genk – Video Prompt Generator</h2>
+    <div class="container">
 
-<label>Nama Model A</label>
-<input type="text" id="modelA" placeholder="Contoh: Rara, Putri">
+        <img src="/assets/logo.png" class="logo" alt="Logo MbahGenk">
 
-<label>Nama Model B</label>
-<input type="text" id="modelB" placeholder="Contoh: Dimas, Bagus">
+        <h1>Selamat datang di MbahGenk AI Creator</h1>
+        <p>Website resmi generator prompt & tool AI milik MbahGenk.</p>
 
-<label>Bahasa Dialog</label>
-<select id="language">
-    <option>Indonesia</option>
-    <option>Jawa</option>
-</select>
+        <img src="/assets/splash.png" class="splash" alt="Splash Screen">
 
-<button class="btn-add" onclick="addScene()">+ Tambah Scene</button>
+        <p>
+            Semua fitur AI sedang dikembangkan.  
+            Tunggu update berikutnya!
+        </p>
 
-<div id="scenes"></div>
-
-<!-- Generate Prompt Bawah -->
-<button class="btn-gen" onclick="generatePrompt()">Generate Prompt (Bawah)</button>
-
-<!-- HASIL OUTPUT SEKARANG DI BAGIAN PALING BAWAH -->
-<h3>Hasil Prompt:</h3>
-<div id="output"></div>
-
-<script>
-let sceneCount = 0;
-
-function addScene() {
-    sceneCount++;
-
-    const box = document.createElement("div");
-    box.className = "scene-box";
-    box.id = "scene-" + sceneCount;
-
-    box.innerHTML = `
-        <h3>Scene ${sceneCount}</h3>
-
-        <label>Adegan Model A</label>
-        <textarea id="adeganA-${sceneCount}" placeholder="Contoh: Model A berjalan…"></textarea>
-
-        <label>Adegan Model B</label>
-        <textarea id="adeganB-${sceneCount}" placeholder="Contoh: Model B duduk…"></textarea>
-
-        <label>Dialog Model A</label>
-        <textarea id="dialogA-${sceneCount}" placeholder="Contoh: 'Aku sudah siap'"></textarea>
-
-        <label>Dialog Model B</label>
-        <textarea id="dialogB-${sceneCount}" placeholder="Contoh: 'Ayo mulai'"></textarea>
-
-        <label>Durasi (detik)</label>
-        <input type="number" id="durasi-${sceneCount}" placeholder="Contoh: 5">
-    `;
-
-    document.getElementById("scenes").appendChild(box);
-}
-
-function generatePrompt() {
-    let modelA = document.getElementById("modelA").value;
-    let modelB = document.getElementById("modelB").value;
-    let language = document.getElementById("language").value;
-
-    let result = `PROMPT VIDEO\nBahasa: ${language}\nModel A: ${modelA}\nModel B: ${modelB}\n\n`;
-
-    for (let i = 1; i <= sceneCount; i++) {
-        let adegA = document.getElementById(`adeganA-${i}`).value;
-        let adegB = document.getElementById(`adeganB-${i}`).value;
-        let dialogA = document.getElementById(`dialogA-${i}`).value;
-        let dialogB = document.getElementById(`dialogB-${i}`).value;
-        let durasi = document.getElementById(`durasi-${i}`).value;
-
-        result += `=== Scene ${i} ===\n`;
-        result += `Adegan Model A: ${adegA}\n`;
-        result += `Adegan Model B: ${adegB}\n`;
-        result += `Dialog Model A: ${dialogA}\n`;
-        result += `Dialog Model B: ${dialogB}\n`;
-        result += `Durasi: ${durasi} detik\n\n`;
-    }
-
-    document.getElementById("output").innerText = result;
-}
-</script>
+        <div class="footer">© 2024 MbahGenk AI Creator</div>
+    </div>
 
 </body>
 </html>
