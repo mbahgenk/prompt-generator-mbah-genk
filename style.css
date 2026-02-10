@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    text-align: center;
+}
+
+/* Splash */
+#splash-screen {
+    position: fixed;
+    inset: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Main */
+.logo {
+    width: 120px;
+    margin-top: 20px;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
